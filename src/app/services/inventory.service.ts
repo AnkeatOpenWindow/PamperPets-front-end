@@ -1,28 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { landing } from '../models/inventory.model';
+import { inventory } from '../models/inventory.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class landingService {
+export class inventoryService {
 
   // add httpClient functionality to this service
   constructor(private http: HttpClient) { }
 
-  private baseURL="http://localhost:3000/landing"
+  private baseURL="http://localhost:3000/inventory"
 
-  // get all landing items
-  getAlllanding(): Observable<landing[]>{
-    return this.http.get<landing[]>(this.baseURL)
+  // get all inventory items
+  getAllinventory(): Observable<inventory[]>{
+    return this.http.get<inventory[]>(this.baseURL)
   }
 
   // update invotry item
-  updatelandingAmount(id: number, newAmount: number)
-  : Observable<landing>  {
+  updateinventoryAmount(id: number, newAmount: number)
+  : Observable<inventory>  {
 
-    return this.http.put<landing>(`${this.baseURL}/${id}`, {amount:newAmount})
+    return this.http.put<inventory>(`${this.baseURL}/${id}`, {amount:newAmount})
   }
 
 

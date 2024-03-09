@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { landingComponent } from './component/inventory/inventory.component';
+import { inventoryComponent } from './component/inventory/inventory.component';
 import { PagenotfountComponent } from './component/pagenotfount/pagenotfount.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
