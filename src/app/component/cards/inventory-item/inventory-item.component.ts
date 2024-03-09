@@ -19,10 +19,8 @@ export class InventoryItemComponent {
   @Input() item:Inventory = { 
     id: 0, 
     name:"Dummy", 
-    category:"Nah",
     description: "Dummy data",
     icon: "assets/pyton.png",
-    amount: 0,
   }
 
   tempUpdateValue = 0
@@ -38,7 +36,6 @@ export class InventoryItemComponent {
    this.service.updateInventoryAmount(this.item.id!, this.tempUpdateValue)
       .subscribe((newItem) => {
     //success
-    this.item.amount = newItem.amount
    })
   }
 

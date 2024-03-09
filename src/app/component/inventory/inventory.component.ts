@@ -22,27 +22,22 @@ export class InventoryComponent {
   inventoryList: Inventory[] = [
     {
     id: 1,
-    name: "HTML",
-    category: "markup",
-    icon: "assets/html-5.png",
-    description: "Building of the web",
-    amount: 4, 
+    name: "Jacket",
+    icon: "assets/jacket.png",
+    description: "View jacket inventory",
+    
     },
     {
       id: 2,
-      name: "CSS",
-      category: "styling",
-      icon: "assets/css-3.png",
-      description: "Make the web pretty",
-      amount: 10, 
+      name: "Toy",
+      icon: "assets/toy.jpg",
+      description: "View toy inventory",
     },
     {
       id: 3,
-      name: "Javascript",
-      category: "programming",
-      icon: "assets/js.png",
-      description: "Make the web start",
-      amount: 4, 
+      name: "Collar",
+      icon: "assets/collar.jpg",
+      description: "View collar inventory",
       },
   ]
 
@@ -70,10 +65,8 @@ export class InventoryComponent {
     // create our new item
     var newItem: Inventory={
         name: this.newInventoryItem.value.name!,
-        category: this.newInventoryItem.value.category!,
         icon: "assets/python.png",
-        description: this.newInventoryItem.value.description!,
-        amount: 10, 
+        description: this.newInventoryItem.value.description!
     }
 
     this.inventoryList.push(newItem);
