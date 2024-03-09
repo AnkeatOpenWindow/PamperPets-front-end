@@ -1,56 +1,56 @@
 import { Component } from '@angular/core';
-import { Inventory } from '../../models/inventory.model';
+import { landing } from '../../models/inventory.model';
 import { CommonModule } from '@angular/common';
-import { InventoryItemComponent } from '../cards/inventory-item/inventory-item.component';
+import { landingItemComponent } from '../cards/inventory-item/inventory-item.component';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { InventoryService } from '../../services/inventory.service';
+import { landingService } from '../../services/inventory.service';
 
 @Component({
-  selector: 'app-inventory',
+  selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, InventoryItemComponent, ReactiveFormsModule],
+  imports: [CommonModule, landingItemComponent, ReactiveFormsModule],
   templateUrl: './inventory.component.html',
   styleUrl: './inventory.component.css'
 })
-export class InventoryComponent {
+export class landingComponent {
 
   // we are injecting our service fuctonality into this 
-  constructor(private service: InventoryService){}
+  constructor(private service: landingService){}
 
-  //an example of an arry, but spesifying that the objects should follow the inventory model
+  //an example of an arry, but spesifying that the objects should follow the landing model
   // dummy data
-  inventoryList: Inventory[] = [
+  landingList: landing[] = [
     {
     id: 1,
     name: "Jacket",
     icon: "assets/jacket.png",
-    description: "View jacket inventory",
+    description: "View jacket landing",
     
     },
     {
       id: 2,
       name: "Toy",
       icon: "assets/toy.jpg",
-      description: "View toy inventory",
+      description: "View toy landing",
     },
     {
       id: 3,
       name: "Collar",
       icon: "assets/collar.jpg",
-      description: "View collar inventory",
+      description: "View collar landing",
       },
   ]
 
   ngOnInit(){
-    this.service.getAllInventory().subscribe((data)=>{
+    this.service.getAlllanding().subscribe((data)=>{
       console.log(data)
-      this.inventoryList = data
+      this.landingList = data
     })
   }
 
   //Form variables
   //Think as this as your useState
-  newInventoryItem= new FormGroup({
+  newlandingItem= new FormGroup({
     name: new FormControl ('', Validators.required),
     category: new FormControl ("", Validators.required),
     description: new FormControl (""),
@@ -58,20 +58,20 @@ export class InventoryComponent {
 
 
 
-  addNewInventory(){
-    // console.warn(this.newInventoryItem.value)
+  addNewlanding(){
+    // console.warn(this.newlandingItem.value)
 
 
     // create our new item
-    var newItem: Inventory={
-        name: this.newInventoryItem.value.name!,
+    var newItem: landing={
+        name: this.newlandingItem.value.name!,
         icon: "assets/python.png",
-        description: this.newInventoryItem.value.description!
+        description: this.newlandingItem.value.description!
     }
 
-    this.inventoryList.push(newItem);
+    this.landingList.push(newItem);
 
     //resets imputs values
-    this.newInventoryItem.reset()
+    this.newlandingItem.reset()
   }
 }
