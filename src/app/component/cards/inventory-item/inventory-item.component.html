@@ -1,0 +1,13 @@
+<mat-card class="example-card">
+  <img [src]="item.icon" width="50"/>
+    <mat-card-header>
+      <mat-card-title>{{item.name}}</mat-card-title>
+      <mat-card-subtitle>{{item.category}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{item.description}}</p>
+      <p>{{item.amount}}</p>
+      <input [value]="item.amount" type="number"  (change)="updateAmount($event)" /> 
+      <button (click)="saveAmount()" style="margin-top: 10px;">Update</button>
+    </mat-card-content>
+</mat-card>
