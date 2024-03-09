@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* This will make the container take the full height of the viewport */
+  }
+
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login{
+    border: 1px solid black;
+    align-items: center;
+    padding: 50px;
+    
+}
+
+.button1 {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(30, 30, 30);
+    border: 1px solid rgb(30, 30, 30);
+    border-radius: 5px;
+    color: white;
+}
+
+
+.button2 {
+    width: 100px;
+    height: 30px;
+    border: 1px solid rgb(30, 30, 30);
+    border-radius: 5px;
+}
