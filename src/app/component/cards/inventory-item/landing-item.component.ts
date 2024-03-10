@@ -1,25 +1,25 @@
 import { Component, Input} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
-import { inventory } from '../../../models/inventory.model';
-import { inventoryService } from '../../../services/inventory.service';
+import { landing } from '../../../models/landing.model';
+import { landingService } from '../../../services/landing.service';
 
 @Component({
-  selector: 'app-inventory-item',
+  selector: 'app-landing-item',
   standalone: true,
   imports: [MatCardModule],
-  templateUrl: './inventory-item.component.html',
-  styleUrl: './inventory-item.component.css'
+  templateUrl: './landing-item.component.html',
+  styleUrl: './landing-item.component.css'
 })
 export class InventoryItemComponent {
 
-  constructor(private service: inventoryService){}
+  constructor(private service: landingService){}
 
   //Behvior and varibales
-  @Input() item:inventory = { 
+  @Input() item:landing = { 
     id: 0, 
     name:"Dummy", 
     description: "Dummy data",
-    icon: "assets/pyton.png",
+    icon: "assets/toy.jpg",
   }
 
   tempUpdateValue = 0
@@ -33,7 +33,7 @@ export class InventoryItemComponent {
    //TODO:
 
    this.service.updateinventoryAmount(this.item.id!, this.tempUpdateValue)
-      .subscribe((newItem) => {
+      .subscribe((newItem: any) => {
     //success
    })
   }

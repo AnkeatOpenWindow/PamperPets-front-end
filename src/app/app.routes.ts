@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { inventoryComponent } from './component/inventory/inventory.component';
 import { CraftingComponent } from './component/crafting/crafting.component';
-import { PagenotfountComponent } from './component/pagenotfount/pagenotfount.component';
 import { LandingComponent } from './component/landing/landing.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ChartsComponent } from './component/charts/charts.component';
@@ -15,6 +14,4 @@ export const routes: Routes = [
     {path:"crafting", component: CraftingComponent},
     {path:"chart", component: ChartsComponent},
     {path:"", redirectTo:"landing", pathMatch:"full"}, //taking us to our first path
-    {path:"**", component: PagenotfountComponent}, //wild card
-    
 ];

@@ -1,0 +1,17 @@
+* {
+    font-family: sans-serif;
+}
+
+.inventory-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around; 
+    padding: 20px; 
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    max-width: 300px; 
+    padding: 20px;
+}

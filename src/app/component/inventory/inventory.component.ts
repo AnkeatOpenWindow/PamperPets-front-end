@@ -24,20 +24,20 @@ export class inventoryComponent {
     id: 1,
     name: "Jacket",
     icon: "assets/jacket.png",
-    description: "Pamper Pets offers dog jackets branded by Dog's Life",
+    description: "Quantity: 10",
     
     },
     {
       id: 2,
       name: "Toy",
       icon: "assets/toy.jpg",
-      description: "Pamper Pets offers dog toys branded by Dog's Life",
+      description: "Quantity: 10",
     },
     {
       id: 3,
       name: "Collar",
       icon: "assets/collar.jpg",
-      description: "Pamper Pets offers dog collar branded by Dog's Life",
+      description: "Quantity: 10",
       },
   ]
 
@@ -65,7 +65,7 @@ export class inventoryComponent {
     // create our new item
     var newItem: inventory={
         name: this.newinventoryItem.value.name!,
-        icon: "assets/python.png",
+        icon: "",
         description: this.newinventoryItem.value.description!
     }
 
