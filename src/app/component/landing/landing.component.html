@@ -1,14 +1,14 @@
 <!--Todo: Display my invetory-->
+<div class="header-grid">
+    <img src="assets/Header.png" width="100%"/>
+</div>
 <div class="landing-grid">
-    <!--
-        <div>
-            <img [src]="" width="50"/>
-            <p></p>
-        </div>
-    -->
-    <!--Todo: extract inventory to component -->
-        <app-inventory-item *ngFor="let item of landingList" [item]="item" class="card"></app-inventory-item>
-    </div>
+    <!--Todo: extract landing to component -->
+       <app-landingpage-item *ngFor="let item of landingList" [item]="item" class="card"></app-landingpage-item>
+</div>
+
+
+
     
     
     

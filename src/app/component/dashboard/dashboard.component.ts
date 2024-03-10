@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { dashboard } from '../../models/dashboard.model';
+import { Dashboard } from '../../models/dashboard.model';
 import { CommonModule } from '@angular/common';
 import { dashboardService } from '../../services/dashboard.service';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { InventoryItemComponent } from "../cards/inventory-item/inventory-item.component";
+import { DashboardItemComponent } from '../card/dashboard-item/dashboard-item.component';
+
 
 
 @Component({
@@ -11,15 +12,15 @@ import { InventoryItemComponent } from "../cards/inventory-item/inventory-item.c
     standalone: true,
     templateUrl: './dashboard.component.html',
     styleUrl: './dashboard.component.css',
-    imports: [InventoryItemComponent]
+    imports: [CommonModule, DashboardItemComponent, ReactiveFormsModule]
 })
 export class DashboardComponent {
 
   constructor(private service: dashboardService){}
 
-  //an example of an arry, but spesifying that the objects should follow the inventory model
+  //an example of an arry, but spesifying that the objects should follow the dashboard model
   // dummy data
-  inventoryList: dashboard[] = [
+  dashboardList: Dashboard[] = [
     {
     id: 1,
     name: "Pretoria",
@@ -42,15 +43,15 @@ export class DashboardComponent {
   ]
 
   ngOnInit(){
-    this.service.getAllinventory().subscribe((data)=>{
+    this.service.getAlldashboard().subscribe((data)=>{
       console.log(data)
-      this.inventoryList = data
+      this.dashboardList = data
     })
   }
 
   //Form variables
   //Think as this as your useState
-  newinventoryItem= new FormGroup({
+  newdashboardItem= new FormGroup({
     name: new FormControl ('', Validators.required),
     category: new FormControl ("", Validators.required),
     description: new FormControl (""),
@@ -58,21 +59,21 @@ export class DashboardComponent {
 
 
 
-  addNewinventory(){
-    // console.warn(this.newinventoryItem.value)
+  addNewdashboard(){
+    // console.warn(this.newdashboardItem.value)
 
 
     // create our new item
-    var newItem: dashboard={
-        name: this.newinventoryItem.value.name!,
+    var newItem: Dashboard={
+        name: this.newdashboardItem.value.name!,
         icon: "",
-        description: this.newinventoryItem.value.description!
+        description: this.newdashboardItem.value.description!
     }
 
-    this.inventoryList.push(newItem);
+    this.dashboardList.push(newItem);
 
     //resets imputs values
-    this.newinventoryItem.reset()
+    this.newdashboardItem.reset()
   }
 
 }

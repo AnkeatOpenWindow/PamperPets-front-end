@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { landing } from '../models/landing.model';
+import { Landing } from '../models/landing.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +13,16 @@ export class landingService {
 
   private baseURL="http://localhost:3000/landing"
 
-  // get all inventory items
-  getAllinventory(): Observable<landing[]>{
-    return this.http.get<landing[]>(this.baseURL)
+  // get all landing items
+  getAlllanding(): Observable<Landing[]>{
+    return this.http.get<Landing[]>(this.baseURL)
   }
 
-  // update invotry item
-  updateinventoryAmount(id: number, newAmount: number)
-  : Observable<landing>  {
+  // update landing item
+  updatelandingAmount(id: number, newAmount: number)
+  : Observable<Landing>  {
 
-    return this.http.put<landing>(`${this.baseURL}/${id}`, {amount:newAmount})
+    return this.http.put<Landing>(`${this.baseURL}/${id}`, {amount:newAmount})
   }
 
 

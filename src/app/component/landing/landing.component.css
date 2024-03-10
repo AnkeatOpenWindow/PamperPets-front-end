@@ -2,12 +2,20 @@
     font-family: sans-serif;
 }
 
-.inventory-grid {
+.landing-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: space-around; 
     padding: 20px; 
+}
+
+.header-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: space-around; 
+    
 }
 
 .card {

@@ -1,26 +1,26 @@
 import { Component } from '@angular/core';
-import { inventory } from '../../models/inventory.model';
+import { Landing } from '../../models/landing.model';
 import { CommonModule } from '@angular/common';
-import { InventoryItemComponent } from '../cards/inventory-item/inventory-item.component';
+import { LandingpageItemComponent } from '../card3/landingpage-item/landingpage-item.component';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { inventoryService } from '../../services/inventory.service';
-import { landing } from '../../models/landing.model';
+import { landingService } from '../../services/landing.service';
+
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, InventoryItemComponent, ReactiveFormsModule],
+  imports: [CommonModule, LandingpageItemComponent, ReactiveFormsModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
 export class LandingComponent {
 
   // we are injecting our service fuctonality into this 
-  constructor(private service: inventoryService){}
+  constructor(private service: landingService){}
 
-  //an example of an arry, but spesifying that the objects should follow the inventory model
+  //an example of an arry, but spesifying that the objects should follow the landing model
   // dummy data
-  landingList: landing[] = [
+  landingList: Landing[] = [
     {
     id: 1,
     name: "Jacket",
@@ -43,7 +43,7 @@ export class LandingComponent {
   ]
 
   ngOnInit(){
-    this.service.getAllinventory().subscribe((data)=>{
+    this.service.getAlllanding().subscribe((data)=>{
       console.log(data)
       this.landingList = data
     })
@@ -51,7 +51,7 @@ export class LandingComponent {
 
   //Form variables
   //Think as this as your useState
-  newinventoryItem= new FormGroup({
+  newlandingItem= new FormGroup({
     name: new FormControl ('', Validators.required),
     category: new FormControl ("", Validators.required),
     description: new FormControl (""),
@@ -59,20 +59,20 @@ export class LandingComponent {
 
 
 
-  addNewinventory(){
-    // console.warn(this.newinventoryItem.value)
+  addNewlanding(){
+    // console.warn(this.newlandingItem.value)
 
 
     // create our new item
-    var newItem: inventory={
-        name: this.newinventoryItem.value.name!,
+    var newItem: Landing={
+        name: this.newlandingItem.value.name!,
         icon: "",
-        description: this.newinventoryItem.value.description!
+        description: this.newlandingItem.value.description!
     }
 
     this.landingList.push(newItem);
 
     //resets imputs values
-    this.newinventoryItem.reset()
+    this.newlandingItem.reset()
   }
 }

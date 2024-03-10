@@ -1,6 +1,6 @@
 import { Component, Input} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
-import { dashboard } from '../../../models/dashboard.model';
+import { Dashboard } from '../../../models/dashboard.model';
 import { dashboardService } from '../../../services/dashboard.service';
 
 @Component({
@@ -10,12 +10,12 @@ import { dashboardService } from '../../../services/dashboard.service';
   templateUrl: './dashboard-item.component.html',
   styleUrl: './dashboard-item.component.css'
 })
-export class InventoryItemComponent {
+export class DashboardItemComponent {
 
   constructor(private service: dashboardService){}
 
   //Behvior and varibales
-  @Input() item:dashboard = { 
+  @Input() item:Dashboard = { 
     id: 0, 
     name:"Dummy", 
     description: "Dummy data",

@@ -1,11 +1,13 @@
 <mat-card class="example-card">
-  <img [src]="item.icon" width="50"/>
+  <img [src]="item.icon" width="300"/>
     <mat-card-header>
       <mat-card-title>{{item.name}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <p>{{item.description}}</p>
-      <button (click)="saveAmount()" style="margin-top: 10px;">Statistics</button><button (click)="saveAmount()" routerLink="/crafting" style="margin-top: 10px;">Craft</button>
+      
+      <button (click)="saveAmount()" style="margin-top: 10px; " class="button2">Statistics</button>
+      <button (click)="saveAmount()" routerLink="/crafting" style="margin-top: 10px;" class="button">Craft</button>
       <!-- <button mat-icon-button class="example-icon person-icon" aria-label="Example icon-button with person icon" routerLink="/crafting"> -->
     </mat-card-content>
 </mat-card>
