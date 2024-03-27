@@ -1,39 +1,45 @@
-<h1 class="example-container" >Crafting page: Jacket</h1>
-<div class="example-container mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource">
-  
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-  
-      <!-- Item Column -->
-      <ng-container matColumnDef="item">
-        <mat-header-cell *matHeaderCellDef style="background-color: black; color: white;"> Item </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.item}} </mat-cell>
-      </ng-container>
-  
-      <!-- Color Column -->
-      <ng-container matColumnDef="color">
-        <mat-header-cell *matHeaderCellDef style="background-color: black; color: white;"> Color </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.color}} </mat-cell>
-      </ng-container>
-  
-      <!-- Quantity available Column -->
-      <ng-container matColumnDef="available" >
-        <mat-header-cell *matHeaderCellDef style="background-color: black; color: white;"> Quantity available </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.available}} </mat-cell>
-      </ng-container>
-  
-      <!-- Quantity needed Column -->
-      <ng-container matColumnDef="needed">
-        <mat-header-cell *matHeaderCellDef style="background-color: black; color: white;"> Quantity needed </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.needed}} </mat-cell>
-      </ng-container>
-  
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
-</div>
-<div class="aline-right">
-    <button type="button" class="button1">Craft</button>
-</div>
-  
+<h1 class="example-container">Crafting page</h1>
+
+
+
+    <div class="crafting-grid" style="display: grid;grid-template-columns: 2fr 1fr;">
+
+        <div>
+            @for(recipe of recipes; track $index){
+            <h1 (click)="setSelectedRecipe(recipe)">{{recipe.name}}</h1>
+            }
+        </div>
+        @if(selectedRecipe)
+        {<div style="background-color: #f2f2f2; padding: 20px;">
+            <h3>{{selectedRecipe.name}}</h3>
+
+            <p>Amount Crafted: {{selectedRecipe.amountCrafted}}</p>
+
+
+            <p>Ingredients Needed:</p>
+
+            <!-- 2 ways to loop -->
+            <ul>
+                @for(ingredient of selectedRecipe.ingredients; track $index){
+                <li [style]="ingredient.inventory.amount >= ingredient.amountNeeded ? 'color: black' : 'color: red'">
+                    {{ingredient.inventory.name}} : {{ingredient.amountNeeded}}</li>
+                }
+            </ul>
+
+            @if(selectedRecipe.isCraftable){
+            <button (click)="craftNewRecipe(selectedRecipe)">
+                Craft Build
+            </button>
+            }@else{
+            <p style="color: red">
+                Not enough ingredients available in inventory (marked in red)
+            </p>
+            }
+
+        </div>
+
+        }
+
+    </div>
+
+    <!--ONLY ADMIN USERS CAN SEE THE CRAFT PAGE-->

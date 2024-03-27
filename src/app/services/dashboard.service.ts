@@ -12,7 +12,7 @@ export class DashboardService {
   // add httpClient functionality to this service
   constructor(private http: HttpClient) { }
 
-  private baseURL="http://localhost:3000/dashboard"
+  private baseURL="http://localhost:3000/location"
 
   // get all dashboard items
   getAllDashboard(): Observable<Dashboard[]>{

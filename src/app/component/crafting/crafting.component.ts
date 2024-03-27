@@ -1,31 +1,67 @@
 import { Component } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { Crafting } from '../../models/crafting.model';
-import { CommonModule } from '@angular/common';
+import { RecipeService } from '../../services/recipe.service';
+import { Recipes } from '../../models/recipe.model';
 
 @Component({
   selector: 'app-crafting',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatSortModule, MatPaginatorModule],
+  imports: [],
   templateUrl: './crafting.component.html',
   styleUrl: './crafting.component.css'
 })
 export class CraftingComponent {
-  displayedColumns = ['item', 'color', 'available', 'needed'];
-  dataSource = ELEMENT_DATA;
-}
+  constructor(private service: RecipeService) { }
 
-export interface Element {
-  //need to figure out how to add a drop down to item and color for material and color
-  item: string;
-  color: string;
-  available: string;
-  needed: string;
-}
+  recipes: Recipes[] = []
 
-const ELEMENT_DATA: Element[] = [
-  {item: 'Material', color: 'Red, Blue, Purple', available: '20 m', needed: '5 m'},
-  {item: 'Embroidery', color: 'White, Black', available: '20', needed: '1'},
-];
+  ngOnInit() {
+    this.getRecipes()
+  }
+
+  getRecipes() {
+    this.service.getAllRecipes().subscribe((data) => {
+      this.recipes = data;
+      console.log(data);
+    });
+  }
+
+  // SELECT ACTICE RECIPE
+  selectedRecipe?: Recipes
+
+
+  setSelectedRecipe(recipe: Recipes) {
+    this.selectedRecipe = recipe
+
+    this.checkCraftability()
+  }
+
+  checkCraftability() {
+    //by default, we asume all we have enough ingredient
+    this.selectedRecipe!.isCraftable = true
+
+    //loop through our ingredients to check if we have enough 
+    this.selectedRecipe!.ingredients?.forEach((ingredient) => {
+
+      //if any of the ingredients is not enough, set craftable to fales
+      if (ingredient.amountNeeded > ingredient.inventory.amount) {
+        this.selectedRecipe!.isCraftable = false
+        console.log("not craftable" + ingredient.inventory.name)
+        return; // stop whenever any of this ingredients are not enough
+      }
+    })
+  }
+
+  //calls when clicking on craft
+  craftNewRecipe(recipe: Recipes) {
+    if (this.selectedRecipe!.id == recipe.id) { //making sure the right recipe has been selected
+      // Call our service function
+      this.service.craftRecipe(recipe).subscribe((data) => {
+        this.selectedRecipe!.amountCrafted++
+        console.log(data)
+      })
+
+    }
+  }
+
+
+}

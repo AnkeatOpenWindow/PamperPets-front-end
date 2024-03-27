@@ -2,6 +2,13 @@
     font-family: sans-serif;
 }
 
+.heading-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    margin-top: 10px;
+}
+
 .inventory-grid {
     display: flex;
     flex-wrap: wrap;

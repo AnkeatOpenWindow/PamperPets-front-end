@@ -22,26 +22,33 @@ export class inventoryComponent {
   inventoryList: Inventory[] = [
     {
     id: 1,
-    name: "Jacket",
-    icon: "assets/jacket.png",
+    name: "Cotten",
+    icon: "assets/cotton.jpg",
     description: "Make the web pretty",
     amount: 4, 
     
     },
     {
       id: 2,
-      name: "Toy",
-      icon: "assets/toy.jpg",
+      name: "Plastic",
+      icon: "assets/plastic.jpg",
       description: "Test",
       amount: 10, 
     },
     {
       id: 3,
-      name: "Collar",
-      icon: "assets/collar.jpg",
+      name: "Embrodery",
+      icon: "assets/embrodery.jpg",
       description: "Test",
       amount: 4, 
-      },
+    },
+    {
+      id: 4,
+      name: "Dog Tag",
+      icon: "assets/tag.jpg",
+      description: "Test",
+      amount: 4, 
+    },
       
   ]
 //

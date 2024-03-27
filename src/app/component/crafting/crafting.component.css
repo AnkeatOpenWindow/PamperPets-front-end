@@ -30,3 +30,11 @@
   justify-content: right;
   align-items: right;
 }
+
+
+.crafting-grid{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    margin-top: 10px;
+}
