@@ -1,7 +1,7 @@
 import { Component, Input} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { Dashboard } from '../../../models/dashboard.model';
-import { dashboardService } from '../../../services/dashboard.service';
+import { DashboardService } from '../../../services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard-item',
@@ -12,13 +12,13 @@ import { dashboardService } from '../../../services/dashboard.service';
 })
 export class DashboardItemComponent {
 
-  constructor(private service: dashboardService){}
+  constructor(private service: DashboardService){}
 
   //Behvior and varibales
   @Input() item:Dashboard = { 
     id: 0, 
     name:"Dummy", 
-    description: "Dummy data",
+    adress: "Dummy data",
     icon: "assets/toy.jpg",
   }
 
@@ -29,14 +29,14 @@ export class DashboardItemComponent {
     this.tempUpdateValue = parseInt (e.target.value) 
   }
      
-  saveAmount(){
+  //saveAmount(){
    //TODO:
 
-   this.service.updatedashboardAmount(this.item.id!, this.tempUpdateValue)
-      .subscribe((newItem: any) => {
+   //this.service.updatedashboardAmount(this.item.id!, this.tempUpdateValue)
+     // .subscribe((newItem: any) => {
     //success
-   })
-  }
+   //})
+  //}
 
 
 }

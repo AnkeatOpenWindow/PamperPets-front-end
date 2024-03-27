@@ -6,7 +6,7 @@ import { Dashboard } from '../models/dashboard.model';
 @Injectable({
   providedIn: 'root'
 })
-export class dashboardService {
+export class DashboardService {
   //updatedashboardAmount: any;
 
   // add httpClient functionality to this service
@@ -15,16 +15,16 @@ export class dashboardService {
   private baseURL="http://localhost:3000/dashboard"
 
   // get all dashboard items
-  getAlldashboard(): Observable<Dashboard[]>{
+  getAllDashboard(): Observable<Dashboard[]>{
     return this.http.get<Dashboard[]>(this.baseURL)
   }
 
   // update invotry item
-  updatedashboardAmount(id: number, newAmount: number)
-  : Observable<Dashboard>  {
+  //updatedashboardAmount(id: number, newAmount: number)
+  //: Observable<Dashboard>  {
 
-    return this.http.put<Dashboard>(`${this.baseURL}/${id}`, {amount:newAmount})
-  }
+    //return this.http.put<Dashboard>(`${this.baseURL}/${id}`, {amount:newAmount})
+ // }
 
 
 }

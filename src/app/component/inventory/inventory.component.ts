@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { inventory } from '../../models/inventory.model';
+import { Inventory } from '../../models/inventory.model';
 import { CommonModule } from '@angular/common';
 import { InventoryItemComponent } from '../cards/inventory-item/inventory-item.component';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { inventoryService } from '../../services/inventory.service';
+import { InventoryService } from '../../services/inventory.service';
 
 @Component({
   selector: 'app-inventory',
@@ -15,38 +15,44 @@ import { inventoryService } from '../../services/inventory.service';
 export class inventoryComponent {
 
   // we are injecting our service fuctonality into this 
-  constructor(private service: inventoryService){}
+  constructor(private service: InventoryService){}
 
   //an example of an arry, but spesifying that the objects should follow the inventory model
   // dummy data
-  inventoryList: inventory[] = [
+  inventoryList: Inventory[] = [
     {
     id: 1,
     name: "Jacket",
     icon: "assets/jacket.png",
-    description: "Quantity: 10",
+    description: "Make the web pretty",
+    amount: 4, 
     
     },
     {
       id: 2,
       name: "Toy",
       icon: "assets/toy.jpg",
-      description: "Quantity: 10",
+      description: "Test",
+      amount: 10, 
     },
     {
       id: 3,
       name: "Collar",
       icon: "assets/collar.jpg",
-      description: "Quantity: 10",
+      description: "Test",
+      amount: 4, 
       },
+      
   ]
+//
+  
+ngOnInit(){
+  this.service.getAllInventory().subscribe((data)=>{
+    console.log(data)
+    this.inventoryList = data
+  })
+}
 
-  ngOnInit(){
-    this.service.getAllinventory().subscribe((data)=>{
-      console.log(data)
-      this.inventoryList = data
-    })
-  }
 
   //Form variables
   //Think as this as your useState
@@ -63,10 +69,11 @@ export class inventoryComponent {
 
 
     // create our new item
-    var newItem: inventory={
+    var newItem: Inventory={
         name: this.newinventoryItem.value.name!,
         icon: "",
-        description: this.newinventoryItem.value.description!
+        description: this.newinventoryItem.value.description!,
+        amount: 10, 
     }
 
     this.inventoryList.push(newItem);
