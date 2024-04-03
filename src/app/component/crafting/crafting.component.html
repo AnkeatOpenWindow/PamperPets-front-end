@@ -2,44 +2,42 @@
 
 
 
-    <div class="crafting-grid" style="display: grid;grid-template-columns: 2fr 1fr;">
+<div class="crafting-grid" style="display: grid;grid-template-columns: 2fr 1fr;">
 
-        <div>
-            @for(recipe of recipes; track $index){
-            <h1 (click)="setSelectedRecipe(recipe)">{{recipe.name}}</h1>
+    <div>
+        @for(recipe of recipes; track $index){
+        <h1 (click)="setSelectedRecipe(recipe)">{{recipe.name}}</h1>
+        }
+    </div>
+    @if(selectedRecipe)
+    {<div style="background-color: #f2f2f2; padding: 20px;">
+        <h3>{{selectedRecipe.name}}</h3>
+
+        <p>Amount Crafted: {{selectedRecipe.amountCrafted}}</p>
+
+
+        <p>Ingredients Needed:</p>
+
+        <!-- 2 ways to loop -->
+        <ul>
+            @for(ingredient of selectedRecipe.ingredients; track $index){
+            <li [style]="ingredient.inventory.amount >= ingredient.amountNeeded ? 'color: black' : 'color: red'">
+                {{ingredient.inventory.name}} : {{ingredient.amountNeeded}}</li>
             }
-        </div>
-        @if(selectedRecipe)
-        {<div style="background-color: #f2f2f2; padding: 20px;">
-            <h3>{{selectedRecipe.name}}</h3>
+        </ul>
 
-            <p>Amount Crafted: {{selectedRecipe.amountCrafted}}</p>
-
-
-            <p>Ingredients Needed:</p>
-
-            <!-- 2 ways to loop -->
-            <ul>
-                @for(ingredient of selectedRecipe.ingredients; track $index){
-                <li [style]="ingredient.inventory.amount >= ingredient.amountNeeded ? 'color: black' : 'color: red'">
-                    {{ingredient.inventory.name}} : {{ingredient.amountNeeded}}</li>
-                }
-            </ul>
-
-            @if(selectedRecipe.isCraftable){
-            <button (click)="craftNewRecipe(selectedRecipe)">
-                Craft Build
-            </button>
-            }@else{
-            <p style="color: red">
-                Not enough ingredients available in inventory (marked in red)
-            </p>
-            }
-
-        </div>
-
+        @if(selectedRecipe.isCraftable){
+        <button (click)="craftNewRecipe(selectedRecipe)">
+            Craft Build
+        </button>
+        }@else{
+        <p style="color: red">
+            Not enough ingredients available in inventory (marked in red)
+        </p>
         }
 
-    </div>
+    </div>}
 
-    <!--ONLY ADMIN USERS CAN SEE THE CRAFT PAGE-->
+</div>
+
+<!--ONLY ADMIN USERS CAN SEE THE CRAFT PAGE-->
