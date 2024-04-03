@@ -2,11 +2,12 @@ import { Component, Input} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { Inventory } from '../../../models/inventory.model';
 import { InventoryService } from '../../../services/inventory.service';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-inventory-item',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './inventory-item.component.html',
   styleUrl: './inventory-item.component.css'
 })
@@ -21,6 +22,7 @@ export class InventoryItemComponent {
     description: "Dummy",
     icon: "assets/pyton.png",
     amount: 0,
+    locationId: 1,
   }
 
   tempUpdateValue = 0

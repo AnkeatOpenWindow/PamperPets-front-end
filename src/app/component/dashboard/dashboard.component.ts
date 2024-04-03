@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { DashboardService } from '../../services/dashboard.service';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { DashboardItemComponent } from '../card/dashboard-item/dashboard-item.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, DashboardItemComponent, ReactiveFormsModule],
+  imports: [CommonModule, DashboardItemComponent, ReactiveFormsModule, RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
   

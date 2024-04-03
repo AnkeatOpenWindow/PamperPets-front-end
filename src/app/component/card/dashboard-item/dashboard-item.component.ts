@@ -2,11 +2,12 @@ import { Component, Input} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { Dashboard } from '../../../models/dashboard.model';
 import { DashboardService } from '../../../services/dashboard.service';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-item',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './dashboard-item.component.html',
   styleUrl: './dashboard-item.component.css'
 })

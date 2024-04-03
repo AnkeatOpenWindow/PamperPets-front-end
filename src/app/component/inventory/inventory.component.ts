@@ -24,40 +24,46 @@ export class inventoryComponent {
     id: 1,
     name: "Cotten",
     icon: "assets/cotton.jpg",
-    description: "Make the web pretty",
-    amount: 4, 
+    description: "To keep you loving pet warm",
+    amount: 4,
+    locationId: 1,
     
     },
     {
       id: 2,
       name: "Plastic",
       icon: "assets/plastic.jpg",
-      description: "Test",
+      description: "To keep you loving pet busy",
       amount: 10, 
+      locationId: 1,
     },
     {
       id: 3,
       name: "Embrodery",
       icon: "assets/embrodery.jpg",
-      description: "Test",
+      description: "To add a bit of style to their clothes",
       amount: 4, 
+      locationId: 1,
     },
     {
       id: 4,
       name: "Dog Tag",
       icon: "assets/tag.jpg",
-      description: "Test",
+      description: "To make sure they find their wa home",
       amount: 4, 
+      locationId: 1,
     },
       
   ]
 //
-  
+// TODO: pass the location id to this get all invetory service
+locationId: number = 1;
+
 ngOnInit(){
-  this.service.getAllInventory().subscribe((data)=>{
-    console.log(data)
-    this.inventoryList = data
-  })
+  this.service.getAllInventory(this.locationId).subscribe((data) => {
+    console.log(data);
+    this.inventoryList = data;
+  });
 }
 
 
@@ -81,6 +87,7 @@ ngOnInit(){
         icon: "",
         description: this.newinventoryItem.value.description!,
         amount: 10, 
+        locationId: 1,
     }
 
     this.inventoryList.push(newItem);

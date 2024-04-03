@@ -8,22 +8,16 @@ import { Inventory } from '../models/inventory.model';
 })
 export class InventoryService {
 
-  // add httpClient functionality to this service
   constructor(private http: HttpClient) { }
 
-  private baseURL="http://localhost:3000/inventory"
+  private baseURL = "http://localhost:3000/inventory";
 
-  // get all inventory items
-  getAllInventory(): Observable<Inventory[]>{
-    return this.http.get<Inventory[]>(this.baseURL)
+  getAllInventory(locationId: number): Observable<Inventory[]> {
+    return this.http.get<Inventory[]>(`${this.baseURL}?locationId=${locationId}`);
   }
 
-  // update invotry item
-  updateInventoryAmount(id: number, newAmount: number)
-  : Observable<Inventory>  {
-
-    return this.http.put<Inventory>(`${this.baseURL}/${id}`, {amount:newAmount})
+  updateInventoryAmount(id: number, newAmount: number): Observable<Inventory> {
+    return this.http.put<Inventory>(`${this.baseURL}/${id}`, { amount: newAmount });
   }
-
 
 }

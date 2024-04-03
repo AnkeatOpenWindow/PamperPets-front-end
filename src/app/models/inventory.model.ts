@@ -4,4 +4,5 @@ export interface Inventory {
     icon: string;
     description: string;
     amount: number; // quantity of that inventory
+    locationId: number;
 }
