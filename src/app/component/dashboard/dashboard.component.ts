@@ -25,20 +25,20 @@ export class DashboardComponent {
       id: 1,
       name: "Pretoria",
       icon: "assets/OW.jpg",
-      adress: "1297 John Vorster Dr, Southdowns, Centurion, 0169",
+      address: "1297 John Vorster Dr, Southdowns, Centurion, 0169",
 
     },
     {
       id: 2,
       name: "Cape Town",
       icon: "assets/OW.jpg",
-      adress: "16 Kloof Nek Rd, Gardens, Cape Town, 8001",
+      address: "16 Kloof Nek Rd, Gardens, Cape Town, 8001",
     },
     {
       id: 3,
       name: "Johannesburg",
       icon: "assets/OW.jpg",
-      adress: "Corner Kingsway, University Rd, Johannesburg, 2092",
+      address: "Corner Kingsway, University Rd, Johannesburg, 2092",
     },
   ]
 
@@ -67,7 +67,7 @@ export class DashboardComponent {
     var newItem: Dashboard = {
       name: this.newdashboardItem.value.name!,
       icon: "",
-      adress: this.newdashboardItem.value.description!
+      address: this.newdashboardItem.value.description!
     }
 
     this.dashboardList.push(newItem);

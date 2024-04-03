@@ -19,7 +19,7 @@ export class DashboardItemComponent {
   @Input() item:Dashboard = { 
     id: 0, 
     name:"Dummy", 
-    adress: "Dummy data",
+    address: "Dummy data",
     icon: "assets/toy.jpg",
   }
 
