@@ -4,13 +4,15 @@
 
 <div class="crafting-grid" style="display: grid;grid-template-columns: 2fr 1fr;">
 
-    <div>
+    <div class="recipe">
+        <h2>Recipies</h2>
         @for(recipe of recipes; track $index){
-        <h1 (click)="setSelectedRecipe(recipe)">{{recipe.name}}</h1>
+        <h3 (click)="setSelectedRecipe(recipe)">{{recipe.name}}: {{recipe.amountCrafted}}</h3> 
+        
         }
     </div>
     @if(selectedRecipe)
-    {<div style="background-color: #f2f2f2; padding: 20px;">
+    {<div class="crafting" style="background-color: #f2f2f2; padding: 20px;">
         <h3>{{selectedRecipe.name}}</h3>
 
         <p>Amount Crafted: {{selectedRecipe.amountCrafted}}</p>
