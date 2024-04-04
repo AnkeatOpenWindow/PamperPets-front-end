@@ -7,13 +7,14 @@
     <div class="recipe">
         <h2>Recipies</h2>
         @for(recipe of recipes; track $index){
-        <h3 (click)="setSelectedRecipe(recipe)">{{recipe.name}}: {{recipe.amountCrafted}}</h3> 
+        <h3 (click)="setSelectedRecipe(recipe)">{{recipe.name}}: {{recipe.amountCrafted}}</h3>
         <p>{{recipe.description}}</p>
         }
     </div>
     @if(selectedRecipe)
     {<div class="crafting" style="background-color: #f2f2f2; padding: 20px;">
-        <h3>{{selectedRecipe.name}}</h3>
+        <img [src]="selectedRecipe.icon" width="300"/>
+        <h2>{{selectedRecipe.name}}</h2>
 
         <p>Amount Crafted: {{selectedRecipe.amountCrafted}}</p>
 
@@ -29,8 +30,8 @@
         </ul>
 
         @if(selectedRecipe.isCraftable){
-        <button (click)="craftNewRecipe(selectedRecipe)">
-            Craft Build
+        <button class="button" (click)="craftNewRecipe(selectedRecipe)">
+            Craft
         </button>
         }@else{
         <p style="color: red">

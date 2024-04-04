@@ -14,6 +14,7 @@ export class CraftingComponent {
 
   recipes: Recipes[] = []
 
+  
   ngOnInit() {
     this.getRecipes()
   }
