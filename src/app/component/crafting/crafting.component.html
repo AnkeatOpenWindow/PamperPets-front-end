@@ -2,18 +2,44 @@
 
 
 
-<div class="crafting-grid" style="display: grid;grid-template-columns: 2fr 1fr;">
+<div class="container">
+    <div class="recipes-wrapper" style="display: flex; flex: 2; flex-direction: column; justify-content: start;">
+        <div class="recipes-container"> <!--x3 -->
+            <h2>Recipies for Pretoria</h2>
+            @for(recipe of recipes; track $index){
+            @if(recipe.locationId == 1){
+            <!--inside if statement above -->
+            <h3 (click)="setSelectedRecipe(recipe)">{{recipe.name}}: {{recipe.amountCrafted}}</h3>
+            <p>{{recipe.description}}</p>
+            }
+            }
+        </div>
+        <div class="recipes-container"> <!--x3 -->
+            <h2>Recipies for Cape Town</h2>
+            @for(recipe of recipes; track $index){
+            @if(recipe.locationId == 2){
+            <!--inside if statement above -->
+            <h3 (click)="setSelectedRecipe(recipe)">{{recipe.name}}: {{recipe.amountCrafted}}</h3>
+            <p>{{recipe.description}}</p>
+            }
+            }
+        </div>
+        <div class="recipes-container"> <!--x3 -->
+            <h2>Recipies for Johannesburg</h2>
+            @for(recipe of recipes; track $index){
+            @if(recipe.locationId == 2){
+            <!--inside if statement above -->
+            <h3 (click)="setSelectedRecipe(recipe)">{{recipe.name}}: {{recipe.amountCrafted}}</h3>
+            <p>{{recipe.description}}</p>
+            }
 
-    <div class="recipe">
-        <h2>Recipies</h2>
-        @for(recipe of recipes; track $index){
-        <h3 (click)="setSelectedRecipe(recipe)">{{recipe.name}}: {{recipe.amountCrafted}}</h3>
-        <p>{{recipe.description}}</p>
-        }
+            }
+        </div>
     </div>
+
     @if(selectedRecipe)
-    {<div class="crafting" style="background-color: #f2f2f2; padding: 20px;">
-        <img [src]="selectedRecipe.icon" width="300"/>
+    {<div class="crafting-container" style="flex: 1; margin-left: 50px;" style="background-color: #f2f2f2; padding: 20px;">
+        <img [src]="selectedRecipe.icon" width="400" />
         <h2>{{selectedRecipe.name}}</h2>
 
         <p>Amount Crafted: {{selectedRecipe.amountCrafted}}</p>

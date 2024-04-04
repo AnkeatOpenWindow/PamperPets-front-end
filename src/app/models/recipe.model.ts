@@ -9,4 +9,5 @@ export interface Recipes {
     ingredients?: Ingredients[]; // Add this line
     isCraftable?: boolean; // frontends
     icon: string;
+    locationId: number;
 }

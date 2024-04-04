@@ -29,24 +29,31 @@
 }
 
 
-.crafting-grid {
+.container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: start;
   margin-top: 10px;
   margin-left: 50px;
+
 }
 
 
-.crafting{
+.crafting-container {
   margin-right: 50px;
+  
 }
 
-.recipe{
+.recipe-container {
+  padding: 10px;
   margin-left: 50px;
+  border: solid 2px black;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
-.button{
+.button {
   width: 80px;
   height: 30px;
   background-color: rgb(30, 30, 30);

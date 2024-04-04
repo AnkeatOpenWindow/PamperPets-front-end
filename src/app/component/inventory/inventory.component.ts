@@ -57,7 +57,7 @@ export class inventoryComponent {
   ]
 //
 // TODO: pass the location id to this get all invetory service
-locationId: number = 1;
+locationId: number = 3;
 
 ngOnInit(){
   this.service.getAllInventory(this.locationId).subscribe((data) => {

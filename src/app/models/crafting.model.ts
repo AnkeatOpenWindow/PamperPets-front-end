@@ -5,4 +5,5 @@ export interface Crafting {
     avalible: number;
     needed: number;
     icon: string;
+    locationId: number;
 }
