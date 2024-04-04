@@ -8,7 +8,7 @@
         <h2>Recipies</h2>
         @for(recipe of recipes; track $index){
         <h3 (click)="setSelectedRecipe(recipe)">{{recipe.name}}: {{recipe.amountCrafted}}</h3> 
-        
+        <p>{{recipe.description}}</p>
         }
     </div>
     @if(selectedRecipe)
