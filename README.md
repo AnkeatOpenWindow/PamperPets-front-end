@@ -33,5 +33,10 @@ https://github.com/AnkeatOpenWindow/PamperPets-back-end.git
 
 ## What each team member did
 Hannah:
+1. Created landing page
+2. Created authentication : both back and frontend
 
-Anke:
+Anke: 
+1. Set up front and back end GitHub repositorys and passed link for backend repository in frontend readme file.
+2. Created charts page.
+

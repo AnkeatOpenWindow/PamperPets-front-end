@@ -27,7 +27,7 @@
         <div class="recipes-container"> <!--x3 -->
             <h2>Recipies for Johannesburg</h2>
             @for(recipe of recipes; track $index){
-            @if(recipe.locationId == 2){
+            @if(recipe.locationId == 3){
             <!--inside if statement above -->
             <h3 (click)="setSelectedRecipe(recipe)">{{recipe.name}}: {{recipe.amountCrafted}}</h3>
             <p>{{recipe.description}}</p>
