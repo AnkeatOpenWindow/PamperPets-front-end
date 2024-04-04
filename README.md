@@ -29,3 +29,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Back-end link
 
 https://github.com/AnkeatOpenWindow/PamperPets-back-end.git
+
+
+## What each team member did
+Hannah:
+
+Anke:

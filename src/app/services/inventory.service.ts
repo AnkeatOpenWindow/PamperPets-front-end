@@ -13,7 +13,7 @@ export class InventoryService {
   private baseURL = "http://localhost:3000/inventory";
 
   getAllInventory(locationId: number): Observable<Inventory[]> {
-    return this.http.get<Inventory[]>(`${this.baseURL}?locationId=${locationId}`);
+    return this.http.get<Inventory[]>(`${this.baseURL}/${locationId}`);
   }
 
   updateInventoryAmount(id: number, newAmount: number): Observable<Inventory> {
