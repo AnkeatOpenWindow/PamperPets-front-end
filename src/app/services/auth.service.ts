@@ -9,71 +9,74 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  private isLoggedIn = new BehaviorSubject<boolean>(false);
+  // influences our behavoir 
+  private isLoggedIn = new BehaviorSubject<boolean>(false)
 
+  //http url
   private loginUrl = "http://localhost:3000/users/login"
 
-  loginUser(email: string, password: string): Observable<boolean> {
-    return this.http.post<any>(this.loginUrl, { email, password }).pipe(
+  //login
+  logInUser(username: string, password: string): Observable<boolean> {
+    //make the http request, receive the response of user info, save user info to session storage 
+    return this.http.post<any>(this.loginUrl, { username, password }).pipe(
       tap(response => {
         if (response) {
+          // set our sessions storage
           console.log(response)
           sessionStorage.setItem("currentUser", JSON.stringify(response))
           this.isLoggedIn.next(true)
         }
       })
-
     )
-
   }
 
+  //logout
   logout() {
     sessionStorage.removeItem("currentUser")
-    this.isLoggedIn.next(false)
+    this.isLoggedIn.next(false) //set state to false
   }
 
+  //returns this logged in user info
   checkCurrentUserLoggedIn(): boolean {
+    //DIDN'T - user model = RECOMMENDED
     console.log("checking if logged in...")
     var user = JSON.parse(sessionStorage.getItem("currentUser")!)
-    console.log(user)
+
     if (user) {
+      
       this.isLoggedIn.next(true)
       return true
     } else {
       this.isLoggedIn.next(false)
       return false
     }
+
   }
 
+  //check if a user is logged in -for UI
   checkIfLoggedIn(): Observable<boolean> {
-    this.checkCurrentUserLoggedIn()
-
     return this.isLoggedIn.asObservable()
-
   }
 
+  //chech if a user is admin
   isUserAdmin() {
-
-    var user = JSON.parse(sessionStorage.getItem("currentUser")!)
-    console.log(user)
+    var user = JSON.parse(sessionStorage.getItem("currentUser")!);
+    console.log(user);
     if (user) {
-      console.log(user.isAdmin + " admin")
+      console.log(user.isAdmin + " admin");
       if (user.isAdmin == true) {
         return true
       } else {
-        return false
+        return false;
       }
     } else {
-      return false
+      return false;
     }
   }
 
+  // returns user data from session - for you
   getCurrentUser(): any {
-
     var user = JSON.parse(sessionStorage.getItem("currentUser")!)
     return user
-
   }
-
 }
-

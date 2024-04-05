@@ -18,6 +18,7 @@ export class AppComponent {
   // add all our
   title = 'world';
 
+
   constructor(private service: AuthService, private router: Router) { }
 
   public isLoggedIn = false
@@ -25,23 +26,22 @@ export class AppComponent {
   public isAdmin = false
 
   ngOnInit() {
-
+    //checking if the user is looged in
     this.checkLoginState()
-
+    
   }
 
   checkLoginState() {
     this.service.checkIfLoggedIn().subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn
+      
       this.isAdmin = this.service.isUserAdmin()
-      console.log("Admin" + this.isAdmin)
+      console.log("Admin"+this.isAdmin)
     })
-
   }
 
   callLogout() {
     this.service.logout()
     this.router.navigateByUrl("/login")
   }
-
 }

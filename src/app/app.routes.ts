@@ -11,12 +11,13 @@ import { AdminAuthGuard, AuthGuard } from './guards/auth.guard';
 // Define your routs here but keep them in order.
 export const routes: Routes = [
     {path:"login", component: LoginComponent},
-    {path:"landing", component: LandingComponent},
-    {path:"dashboard", component: DashboardComponent},
-    {path:"inventory", component: inventoryComponent, canActivate: [AuthGuard]},
-    {path:"inventory2", component: Inventory2Component},
-    {path:"inventory3", component: Inventory3Component},
+    {path:"landing", component: LandingComponent , canActivate: [AuthGuard]},
+    {path:"dashboard", component: DashboardComponent, canActivate: [AdminAuthGuard]},
+    {path:"inventory", component: inventoryComponent, canActivate: [AdminAuthGuard]},
+    {path:"inventory2", component: Inventory2Component, canActivate: [AdminAuthGuard]},
+    {path:"inventory3", component: Inventory3Component, canActivate: [AdminAuthGuard]},
     {path:"crafting", component: CraftingComponent, canActivate: [AdminAuthGuard]},
-    {path:"chart", component: ChartsComponent},
+    {path:"chart", component: ChartsComponent , canActivate: [AuthGuard]},
     {path:"", redirectTo:"landing", pathMatch:"full"}, //taking us to our first path
+    
 ];

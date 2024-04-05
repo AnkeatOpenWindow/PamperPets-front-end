@@ -1,38 +1,27 @@
 <div class="container">
-  <!-- <div class="login">
+  <form [formGroup]="login" (ngSubmit)="onSubmit()">
+  <div class="login">
         <h1 style="text-align: center; padding-bottom: 50px;">Login</h1>
       <div class="example-container">
         <mat-form-field style="margin-left: 15px;">
           <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com" required>
+          <input matInput placeholder="pat@example.com" id="username" type="username" formControlName="username">
         </mat-form-field>
       </div>
       
       <div class="example-container">
         <mat-form-field style="padding-bottom: 50px;">
           <mat-label>Enter your password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
+          <input matInput id="password" type="password" formControlName="password">
         </mat-form-field>
       </div>
       <div style=" margin-bottom: 20px; margin-left: 10px;">
         <button type="button" class="button2" style=" margin-right: 20px;" routerLink="/">Cancel</button>
-        <button type="button" class="button1" routerLink="/dashboard">Sign in</button>
+        <button type="submit" class="button1" value="Login">Sign in</button>
       </div>
       
       
-    </div> -->
-  <form [formGroup]="login" (ngSubmit)="onSubmit()">
-
-    <label for="email">Email:</label>
-    <input id="email" type="email" forControlName="email">
-
-    <label for="password">Password:</label>
-    <input id="password" type="password" forControlName="password">
-
-    <input type="submit" value="Login" />
-
+    </div> 
   </form>
+
 </div>

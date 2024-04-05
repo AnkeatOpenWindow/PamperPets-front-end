@@ -18,5 +18,5 @@ export const AdminAuthGuard: CanActivateFn = (
 ) => {
   return inject(AuthService).isUserAdmin()
     ? true
-    : inject(Router).createUrlTree(['/inventory']);
+    : inject(Router).createUrlTree(['/landing']);
 };

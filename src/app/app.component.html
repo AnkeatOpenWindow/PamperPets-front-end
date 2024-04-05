@@ -11,24 +11,28 @@
 <mat-toolbar class="nav">
   <span style="font-family: 'Nunito', Helvetica, sans-serif;" routerLink="/landing">PamperPets</span>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon person-icon" aria-label="Example icon-button with person icon"
-    routerLink="/dashboard">
-    <mat-icon>dashboard</mat-icon>
-  </button>
 
-  @if(isAdmin){
   <button mat-icon-button class="example-icon person-icon" aria-label="Example icon-button with person icon"
     routerLink="/chart">
     <mat-icon>show_chart</mat-icon>
   </button>
 
+  @if(isAdmin){
+  <button mat-icon-button class="example-icon person-icon" aria-label="Example icon-button with person icon"
+    routerLink="/dashboard">
+    <mat-icon>dashboard</mat-icon>
+  </button>
+
   }
 
-  <button (click)="callLogout()">Logout</button>
+
+  <button mat-icon-button class="example-icon person-icon" aria-label="Example icon-button with person icon"
+    (click)="callLogout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
 </mat-toolbar>
 }@else{
 <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
-
 }
 
 <router-outlet></router-outlet>
