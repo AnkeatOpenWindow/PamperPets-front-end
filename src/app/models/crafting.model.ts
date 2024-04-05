@@ -4,4 +4,6 @@ export interface Crafting {
     color: string;
     avalible: number;
     needed: number;
+    icon: string;
+    locationId: number;
 }

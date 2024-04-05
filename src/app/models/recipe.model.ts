@@ -8,4 +8,6 @@ export interface Recipes {
     amountCrafted: number;
     ingredients?: Ingredients[]; // Add this line
     isCraftable?: boolean; // frontends
+    icon: string;
+    locationId: number;
 }

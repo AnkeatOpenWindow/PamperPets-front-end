@@ -14,6 +14,7 @@ export class CraftingComponent {
 
   recipes: Recipes[] = []
 
+  
   ngOnInit() {
     this.getRecipes()
   }
@@ -31,7 +32,6 @@ export class CraftingComponent {
 
   setSelectedRecipe(recipe: Recipes) {
     this.selectedRecipe = recipe
-
     this.checkCraftability()
   }
 

@@ -8,9 +8,6 @@
 <!--<app-pagenotfount></app-pagenotfount>-->
 
 @if(isLoggedIn){
-
-
-
 <mat-toolbar class="nav">
   <span style="font-family: 'Nunito', Helvetica, sans-serif;" routerLink="/landing">PamperPets</span>
   <span class="example-spacer"></span>
@@ -18,28 +15,20 @@
     routerLink="/dashboard">
     <mat-icon>dashboard</mat-icon>
   </button>
-  @if(isAdmin){ //CHECK IF THIS IS CORRECT!!!
-  <button mat-icon-button class="example-icon person-icon" aria-label="Example icon-button with person icon"
-    routerLink="/crafting">
-    <mat-icon>create</mat-icon>
-  </button>
+
+  @if(isAdmin){
   <button mat-icon-button class="example-icon person-icon" aria-label="Example icon-button with person icon"
     routerLink="/chart">
-    <mat-icon> show_chart</mat-icon>
+    <mat-icon>show_chart</mat-icon>
   </button>
+
   }
 
+  <button (click)="callLogout()">Logout</button>
 </mat-toolbar>
-
-
-<button (click)="callLogout()">Logout</button>
-
-} @else {
-
+}@else{
 <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
 
 }
 
-
-
-<router-outlet />
+<router-outlet></router-outlet>

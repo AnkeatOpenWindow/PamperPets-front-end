@@ -3,4 +3,5 @@ export interface Dashboard {
     name: string;
     icon: string;
     address: string;
+    
 }

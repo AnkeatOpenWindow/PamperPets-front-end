@@ -6,19 +6,14 @@ import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angula
 import { InventoryService } from '../../services/inventory.service';
 
 @Component({
-  selector: 'app-inventory',
+  selector: 'app-inventory3',
   standalone: true,
   imports: [CommonModule, InventoryItemComponent, ReactiveFormsModule],
-  templateUrl: './inventory.component.html',
-  styleUrl: './inventory.component.css'
+  templateUrl: './inventory3.component.html',
+  styleUrl: './inventory3.component.css'
 })
-export class inventoryComponent {
-
-  // we are injecting our service fuctonality into this 
+export class Inventory3Component {
   constructor(private service: InventoryService){}
-
-  //an example of an arry, but spesifying that the objects should follow the inventory model
-  // dummy data
   inventoryList: Inventory[] = [
     {
     id: 1,
@@ -56,8 +51,8 @@ export class inventoryComponent {
       
   ]
 //
-// Pass the location id to this get all invetory service
-locationId: number = 1;
+// TODO: pass the location id to this get all invetory service
+locationId: number = 3;
 
 ngOnInit(){
   this.service.getAllInventory(this.locationId).subscribe((data) => {
@@ -96,4 +91,5 @@ ngOnInit(){
     this.newinventoryItem.reset()
   }
 }
+
 

@@ -29,3 +29,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Back-end link
 
 https://github.com/AnkeatOpenWindow/PamperPets-back-end.git
+
+
+## What each team member did
+Hannah:
+1. Created landing page
+2. Created authentication : both back and frontend
+3. Did styling of the front page
+
+Anke: 
+1. Set up front and back end GitHub repositorys and passed link for backend repository in frontend readme file.
+2. Created charts page.
+3.
