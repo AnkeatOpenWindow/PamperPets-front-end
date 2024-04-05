@@ -12,7 +12,6 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './dashboard-item.component.css'
 })
 export class DashboardItemComponent {
-
   constructor(private service: DashboardService){}
 
   //Behvior and varibales
@@ -30,14 +29,5 @@ export class DashboardItemComponent {
     this.tempUpdateValue = parseInt (e.target.value) 
   }
      
-  //saveAmount(){
-   //TODO:
-
-   //this.service.updatedashboardAmount(this.item.id!, this.tempUpdateValue)
-     // .subscribe((newItem: any) => {
-    //success
-   //})
-  //}
-
 
 }

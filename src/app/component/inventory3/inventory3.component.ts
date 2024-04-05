@@ -51,7 +51,7 @@ export class Inventory3Component {
       
   ]
 //
-// TODO: pass the location id to this get all invetory service
+// Pass the location id to this get all invetory service
 locationId: number = 3;
 
 ngOnInit(){
@@ -82,7 +82,7 @@ ngOnInit(){
         icon: "",
         description: this.newinventoryItem.value.description!,
         amount: 10, 
-        locationId: 1,
+        locationId: 3,
     }
 
     this.inventoryList.push(newItem);
