@@ -30,14 +30,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 https://github.com/AnkeatOpenWindow/PamperPets-back-end.git
 
-
 ## What each team member did
 Hannah:
-1. Created landing page
-2. Created authentication : both back and frontend
-3. Did styling of the front page
-
-Anke: 
-1. Set up front and back end GitHub repositorys and passed link for backend repository in frontend readme file.
-2. Created charts page.
-3.
+1. Front end styling.
+2. Created authentication, both frontend and backend.
+3. Created components for frontend.
+4. Created landing page.
+ 
+Anke:
+1. Linked recipe from all three location and to show them (frontend)
+2. Debug authentication front and backend & made it that you log in with work number and password.
+3. Linked location with inventory front and backend.
+4. Charts page front end with dummy data.
+5. Set up frontend and backend for angular project.
