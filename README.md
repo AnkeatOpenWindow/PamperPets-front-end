@@ -48,7 +48,7 @@
 <!--PROJECT DESCRIPTION-->
 ## About the Project
 <!-- header image of project -->
-![src/assets/Mockup1.jpg][image1]
+![Mockup1](src/assets/Mockup1.jpg)
 
 ### Project Description
 
