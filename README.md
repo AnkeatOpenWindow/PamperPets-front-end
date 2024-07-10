@@ -103,22 +103,22 @@ Get backend at [https://github.com/AnkeatOpenWindow/PamperPets-back-end.git](htt
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
 
-![src/assets/Authentication.png]
+![Authentication](src/assets/Authentication.png)
 ### 1. Authentication
 
 The authentication page allows employees to enter the system with a work number and password validation.
 
-![src/assets/Inventory.png]
+![Inventory](src/assets/Inventory.png)
 ### 2. Inventory
 
 A section to display all of the available inventory/material. Users are able to update the total of each item in the inventory.
 
-![src/assets/Craft.png]
+![Craft](src/assets/Craft.png)
 ### 3. Craft
 
 A section that allows users to craft recipes/items with the available inventory. Only recipes that have enough of the required ingredients can be crafted.
 
-![src/assets/Statistics/png]
+![Statistics](src/assets/Statistics.png)
 ### 4. Statistics
 
 A section that allows employees to view statistics of recipes/items with the available inventory. Only employees can view the statistics.
@@ -131,15 +131,15 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Ideation
 
-![src/assets/Moodboard.jpg]
+![Moodboard](src/assets/Moodboard.jpg)
 
 ### Wireframes
 
-![src/assets/Wireframe1][src/assets/Wireframe2][src/assets/Wireframe3][src/assets/Wireframe4][src/assets/Wireframe5][src/assets/Wireframe6]
+![Wireframe1](src/assets/Wireframe1.jpg)![Wireframe2](src/assets/Wireframe2.jpg)![Wireframe3](src/assets/Wireframe3.jpg)![Wireframe4](src/assets/Wireframe4.jpg)![Wireframe5](src/assets/Wireframe5.jpg)![Wireframe6](src/assets/Wireframe6.jpg)
 
 ### User-flow
 
-![src/assets/User%20Flow.jpg][src/assets/ER%20Diagram.jpg]
+![ER Diagram](src/assets/ER%20Diagram.jpg)![User Flow](src/assets/User%20Flow.jpg)
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -172,9 +172,9 @@ The `Development Process` is the technical implementations and functionality don
 
 ### Mockups
 
-![src/assets/Mockup2]
+![Mockup2](src/assets/Mockup2.jpg)
 <br>
-![src/assets/Mockup3]
+![Mockup3](src/assets/Mockup3.jpg)
 
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
