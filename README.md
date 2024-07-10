@@ -2,7 +2,6 @@
 <h5 align="center" style="padding:0;margin:0;">Anke Du Raan | Hannah Naidoo</h5>
 <h5 align="center" style="padding:0;margin:0;">221202 | 21100366</h5>
 <h6 align="center">Interactive Development 300</h6>
-</br>
 <p align="center">
 
   <h3 align="center">Pamper Pets</h3>
@@ -94,7 +93,8 @@ Run the following in the front-end command-line:
    ```
 
 4. Run backend server
-Get backend at [https://github.com/AnkeatOpenWindow/PamperPets-back-end.git](https://github.com/AnkeatOpenWindow/PamperPets-back-end.git)   ```sh
+Get backend at [https://github.com/AnkeatOpenWindow/PamperPets-back-end.git](https://github.com/AnkeatOpenWindow/PamperPets-back-end.git)
+ ```sh
    npm run dev
    ```
 
