@@ -8,14 +8,14 @@
 
   <p align="center">
     Pet Clothing and Accessory Inventory Management System <br>
-      <a href="https://github.com/username/projectname"><strong>Explore the docs »</strong></a>
+      <a href=" https://github.com/AnkeatOpenWindow/PamperPets-front-end"><strong>Explore the docs »</strong></a>
    <br />
    <br />
    <a href="https://drive.google.com/file/d/1hrXlPQm_waY5H67_-hV0N54cOaK6-GcC/view?usp=sharing">View Demo</a>
     ·
-    <a href="https://github.com/username/projectname/issues">Report Bug</a>
+    <a href="https://github.com/AnkeatOpenWindow/PamperPets-front-end/issues">Report Bug</a>
     ·
-    <a href="https://github.com/username/projectname/issues">Request Feature</a>
+    <a href="https://github.com/AnkeatOpenWindow/PamperPets-front-end/issues">Request Feature</a>
 </p>
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
