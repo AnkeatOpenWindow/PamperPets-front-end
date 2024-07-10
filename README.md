@@ -197,7 +197,7 @@ Contributions are what makes the open-source community such an amazing place to 
 <!-- AUTHORS -->
 ## Authors
 
-* **Anke Du Raan** - [AnkeatOpenWindow (https://github.com/AnkeatOpenWindow)
+* **Anke Du Raan** - [AnkeatOpenWindow](https://github.com/AnkeatOpenWindow)
 * **Hannah Naidoo** - [HannahAmaria](https://github.com/HannahAmaria)
 
 <!-- LICENSE -->
