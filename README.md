@@ -92,7 +92,7 @@ Run the following in the front-end command-line:
    npm start
    ```
 
-4. Run backend server
+4. Run backend server </br>
 Get backend at [https://github.com/AnkeatOpenWindow/PamperPets-back-end.git](https://github.com/AnkeatOpenWindow/PamperPets-back-end.git)
    ```sh
    npm run dev
