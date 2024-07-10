@@ -94,7 +94,7 @@ Run the following in the front-end command-line:
 
 4. Run backend server
 Get backend at [https://github.com/AnkeatOpenWindow/PamperPets-back-end.git](https://github.com/AnkeatOpenWindow/PamperPets-back-end.git)
- ```sh
+  ```sh
    npm run dev
    ```
 
