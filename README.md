@@ -104,22 +104,22 @@ Get backend at [https://github.com/AnkeatOpenWindow/PamperPets-back-end.git](htt
 ## Features and Functionality
 
 ![Authentication](src/assets/Authentication.png)
-### 1. Authentication
+### Authentication
 
 The authentication page allows employees to enter the system with a work number and password validation.
 
 ![Inventory](src/assets/Inventory.png)
-### 2. Inventory
+### Inventory
 
 A section to display all of the available inventory/material. Users are able to update the total of each item in the inventory.
 
 ![Craft](src/assets/Craft.png)
-### 3. Craft
+### Craft
 
 A section that allows users to craft recipes/items with the available inventory. Only recipes that have enough of the required ingredients can be crafted.
 
 ![Statistics](src/assets/Statistics.png)
-### 4. Statistics
+### Statistics
 
 A section that allows employees to view statistics of recipes/items with the available inventory. Only employees can view the statistics.
 
