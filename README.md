@@ -154,8 +154,8 @@ The `Development Process` is the technical implementations and functionality don
 
 #### Highlights
 <!-- stipulated the highlight you experienced with the project -->
-* Achieved 90% project completion 
-* Implemented a simple and elegant design
+* Achieved 90% project completion.
+* Implemented a simple and elegant design.
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
@@ -165,7 +165,7 @@ The `Development Process` is the technical implementations and functionality don
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
 
 * Implement functionality to allow users to switch between different warehouses for managing location specific inventory.
-* Enhance the design
+* Enhance the design.
 
 <!-- MOCKUPS -->
 ## Final Outcome
