@@ -1,94 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Inventory } from '../../models/inventory.model';
 import { CommonModule } from '@angular/common';
 import { InventoryItemComponent } from '../cards/inventory-item/inventory-item.component';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { InventoryService } from '../../services/inventory.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-inventory2',
   standalone: true,
   imports: [CommonModule, InventoryItemComponent, ReactiveFormsModule],
   templateUrl: './inventory2.component.html',
-  styleUrl: './inventory2.component.css'
+  styleUrls: ['./inventory2.component.css']
 })
-export class Inventory2Component {
-  constructor(private service: InventoryService){}
-  inventoryList: Inventory[] = [
-    {
-    id: 1,
-    name: "Cotten",
-    icon: "assets/cotton.jpg",
-    description: "To keep you loving pet warm",
-    amount: 4,
-    locationId: 1,
-    
-    },
-    {
-      id: 2,
-      name: "Plastic",
-      icon: "assets/plastic.jpg",
-      description: "To keep you loving pet busy",
-      amount: 10, 
-      locationId: 1,
-    },
-    {
-      id: 3,
-      name: "Embrodery",
-      icon: "assets/embrodery.jpg",
-      description: "To add a bit of style to their clothes",
-      amount: 4, 
-      locationId: 1,
-    },
-    {
-      id: 4,
-      name: "Dog Tag",
-      icon: "assets/tag.jpg",
-      description: "To make sure they find their wa home",
-      amount: 4, 
-      locationId: 1,
-    },
-      
-  ]
-//
+export class Inventory2Component implements OnInit {
+  constructor(private service: InventoryService, private route: ActivatedRoute) {}
 
-locationId: number = 2;
+  inventoryList: Inventory[] = [];
+  locationName: string = '';
+  locationId: number = 2;  // Location ID specific to this component
 
-ngOnInit(){
-  this.service.getAllInventory(this.locationId).subscribe((data) => {
-    console.log(data);
-    this.inventoryList = data;
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.locationName = params.get('location') || 'Unknown Location';
+    });
+
+    this.service.getAllInventory(this.locationId).subscribe((data) => {
+      this.inventoryList = data;
+    });
+  }
+
+  // Form variables
+  newinventoryItem = new FormGroup({
+    name: new FormControl('', Validators.required),
+    category: new FormControl('', Validators.required),
+    description: new FormControl(''),
   });
-}
 
-
-  //Form variables
-  //Think as this as your useState
-  newinventoryItem= new FormGroup({
-    name: new FormControl ('', Validators.required),
-    category: new FormControl ("", Validators.required),
-    description: new FormControl (""),
-  })
-
-
-
-  addNewinventory(){
-    // console.warn(this.newinventoryItem.value)
-
-
-    // create our new item
-    var newItem: Inventory={
-        name: this.newinventoryItem.value.name!,
-        icon: "",
-        description: this.newinventoryItem.value.description!,
-        amount: 10, 
-        locationId: 2,
-    }
+  addNewinventory() {
+    const newItem: Inventory = {
+      name: this.newinventoryItem.value.name!,
+      icon: "",
+      description: this.newinventoryItem.value.description!,
+      amount: 10,
+      locationId: this.locationId,
+    };
 
     this.inventoryList.push(newItem);
-
-    //resets imputs values
-    this.newinventoryItem.reset()
+    this.newinventoryItem.reset();
   }
 }
-

@@ -53,13 +53,24 @@ export class CraftingComponent {
 
   //calls when clicking on craft
   craftNewRecipe(recipe: Recipes) {
-    if (this.selectedRecipe!.id == recipe.id) { //making sure the right recipe has been selected
+    if (this.selectedRecipe!.id === recipe.id) { // Making sure the right recipe has been selected
       // Call our service function
       this.service.craftRecipe(recipe).subscribe((data) => {
-        this.selectedRecipe!.amountCrafted++
-        console.log(data)
-      })
-
+        this.selectedRecipe!.amountCrafted++;
+        console.log(data);
+  
+        // Check if ingredients are defined before looping through them
+        if (recipe.ingredients) {
+          // Update the inventory for ingredients after crafting
+          recipe.ingredients.forEach(ingredient => {
+            // Assuming your service returns updated inventory information
+            ingredient.inventory.amount -= ingredient.amountNeeded;
+          });
+        }
+  
+        // Recheck craftability after crafting
+        this.checkCraftability();
+      });
     }
   }
 
